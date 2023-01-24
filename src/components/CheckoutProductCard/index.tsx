@@ -1,4 +1,4 @@
-import { CardContainer, CardImage, CardTitle, CloseCardButton, ImgContainer, PriceText, Quantity, QuantityButton, QuantityButtonsContainer, QuantityContainer, QuantityTitle } from './style';
+import { CardContainer, CardImage, CardTitle, CloseCardButton, ImgContainer, Price, PriceText, PriceTextMobile, Quantity, QuantityButton, QuantityButtonsContainer, QuantityContainer, QuantityTitle } from './style';
 import { useDispatch } from 'react-redux';
 import { removeProduct } from '../../store/cartSlice';
 
@@ -26,7 +26,7 @@ const CheckoutProductCard: React.FC<CardProps> = ({ imageUrl, title, description
       <CloseCardButton
         onClick={() => removeCartItemShop(id)}
       >
-        X
+        x
       </CloseCardButton>
       <ImgContainer>
         <CardImage src={imageUrl} />
@@ -39,6 +39,9 @@ const CheckoutProductCard: React.FC<CardProps> = ({ imageUrl, title, description
           <Quantity>1</Quantity>
           <QuantityButton>+</QuantityButton>
         </QuantityButtonsContainer>
+        <Price>
+          <PriceTextMobile>R$399</PriceTextMobile>
+        </Price>
       </QuantityContainer>
       <PriceText>R$399</PriceText>
     </CardContainer>

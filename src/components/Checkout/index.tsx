@@ -30,7 +30,22 @@ const Checkout = () => {
                         price={item.price}
                     />
                 ))} */}
-
+                <CheckoutProductCard
+                    description=""
+                    index={0}
+                    imageUrl="./apple-watch.png"
+                    title="Apple Iphone 10"
+                    price={399}
+                    id='1234578'
+                />
+                <CheckoutProductCard
+                    description=""
+                    index={0}
+                    imageUrl="./apple-watch.png"
+                    title="Apple Iphone 10"
+                    price={399}
+                    id='1234578'
+                />
             </CardsContainer>
             <TotalContainer>
                 <span>Total:</span>

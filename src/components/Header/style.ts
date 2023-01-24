@@ -8,6 +8,11 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 28px 65px;
+
+  @media (max-width: 450px) {
+    height: 48px;
+    padding: 28px 20px;
+  }
 `;
 
 export const TitleContainer = styled.div`
@@ -15,18 +20,30 @@ export const TitleContainer = styled.div`
   justify-content: space-between;
   width: 200px;
   align-items: baseline;
+
+  @media (max-width: 450px) {
+    width: 150px;
+  }
   `
 
 export const Title = styled.h1`
 font-weight: 600;
 font-size: 40px;
 color: #FFFFFF;
+
+@media (max-width: 450px) {
+  font-size: 32px;
+  }
 `
 
 export const Subtitle = styled.h2`
 font-weight: 300;
 font-size: 20px;
 color: #FFFFFF;
+
+@media (max-width: 450px) {
+  font-size: 16px;
+  }
 `
 
 export const CartButton = styled.div`
@@ -41,4 +58,10 @@ font-weight: 700;
 font-size: 18px;
 color: #000000;
 cursor: pointer;
+
+@media (max-width: 450px) {
+  width: 52px;
+  height: 26px;
+  font-size: 12px;
+  }
 `

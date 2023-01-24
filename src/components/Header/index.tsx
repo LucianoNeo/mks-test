@@ -15,7 +15,7 @@ const Header = () => {
             </TitleContainer>
             <CartButton>
                 <Image src='./cart.svg' alt='carrinho' width={18} height={18} />
-                <span></span>
+                <span>1</span>
             </CartButton>
         </StyledHeader>
 

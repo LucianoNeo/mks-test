@@ -21,7 +21,6 @@ export default function Home() {
       setIsLoading(true)
       const response = await api.get('')
       const data = await response.data.products
-      console.log(data)
       if (!data) throw 'Problema na requisição'
       setProducts(data)
     } catch (error) {
@@ -48,7 +47,7 @@ export default function Home() {
       <Provider store={store}>
         <main >
           <Header />
-          {/* <Checkout /> */}
+          <Checkout />
           <ProductGrid>
             {isLoading ?
               <>

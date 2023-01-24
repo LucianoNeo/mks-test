@@ -18,6 +18,11 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 padding-bottom: 124px;
+
+@media (max-width: 450px) {
+    width: 90vw;
+    height: 100vh;
+  }
 `
 
 export const CardsContainer = styled.div`
@@ -27,11 +32,16 @@ width: 110%;
 height: 80%;
 overflow: auto;
 padding-top: 10px;
+
+@media (max-width: 450px) {
+    margin-top: 30px;
+  }
 `
 
 export const CheckoutTitle = styled.h3`
 width: 150px;
 line-height: 33px;
+
 `
 
 export const CloseButton = styled.button`

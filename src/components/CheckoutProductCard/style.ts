@@ -13,6 +13,12 @@ position: relative;
   color: #2C2C2C;
   padding: 0px 24px;
   margin-bottom: 28px;
+
+  @media (max-width: 450px) {
+    height: 220px;
+    flex-direction: column;
+    padding: 22px 24px;
+  }
 `;
 
 export const ImgContainer = styled.div`
@@ -20,6 +26,10 @@ height: 57px;
 display: flex;
 justify-content: center;
 align-items: center;
+
+@media (max-width: 450px) {
+  height: 95px;
+  }
 `
 
 export const CardImage = styled.img`
@@ -31,17 +41,34 @@ font-weight: 400;
 font-size: 13px;
 line-height: 17px;
 width: 113px;
+
+@media (max-width: 450px) {
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  }
 `;
 
 export const QuantityContainer = styled.div`
 display: flex;
 flex-direction: column;
 width: 50px;
+
+@media (max-width: 450px) {
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  }
 `
 export const QuantityTitle = styled.span`
 font-weight: 400;
 font-size: 5px;
 line-height: 6px;
+
+@media (max-width: 450px) {
+  display: none;
+  }
 `
 
 export const QuantityButtonsContainer = styled.div`
@@ -57,6 +84,11 @@ line-height: 10px;
 display: flex;
 justify-content: space-evenly;
 align-items: center;
+
+@media (max-width: 450px) {
+  width: 98px;
+  height: 35px;
+  }
 `
 export const QuantityButton = styled.button`
 cursor: pointer;
@@ -70,6 +102,10 @@ width: 18px;
 :hover {
   transform: scale(1.5);
 }
+
+@media (max-width: 450px) {
+  font-size: 22px;
+  }
 `
 
 export const Quantity = styled.span`
@@ -81,15 +117,43 @@ align-items: center;
 justify-content: center;
 border-top: none;
 border-bottom: none;
+
+
+@media (max-width: 450px) {
+  width: 33%;
+  font-size: 20px;
+  }
 `
 
+export const Price = styled.div`
+background: #373737;
+border-radius: 5px;
+min-width: 84px;
+height: 35px;
+display: flex;
+justify-content: center;
+align-items: center;
 
+@media (min-width: 450px) {
+  display: none;
+  }
+`
 
+export const PriceTextMobile = styled.span`
+font-weight: 700;
+font-size: 15px;
+color: #FFF;
+
+`;
 
 export const PriceText = styled.span`
 font-weight: 700;
 font-size: 15px;
 color: #000000;
+
+@media (max-width: 450px) {
+  display: none;
+  }
 
 `;
 
@@ -127,4 +191,14 @@ align-items: center;
 top: -10px;
 right: -5px;
 z-index: 55;
+
+@media (max-width: 450px) {
+  background-color: transparent;
+  color: #000;
+  font-weight: 400;
+font-size: 42px;
+border: none;
+top: 15px;
+right: 15px;
+  }
 `

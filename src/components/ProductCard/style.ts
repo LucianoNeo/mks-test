@@ -10,6 +10,10 @@ position: relative;
   overflow: hidden;
   padding: 14px;
   margin-bottom: 32px;
+
+  @media (max-width: 450px) {
+   width: 65%;
+  }
 `;
 
 export const ImgContainer = styled.div`
