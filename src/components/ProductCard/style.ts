@@ -22,7 +22,7 @@ margin-top: 4px;
 `
 
 export const CardImage = styled.img`
-  //max-width: 111px;
+  max-height: 100px;
 `;
 
 export const TitlePriceContainer = styled.div`
@@ -37,6 +37,8 @@ margin-top: 10px;
 export const CardTitle = styled.h3`
   font-weight: 400;
 font-size: 16px;
+max-width: 120px;
+min-height: 20px;
 `;
 
 export const CardText = styled.p`
