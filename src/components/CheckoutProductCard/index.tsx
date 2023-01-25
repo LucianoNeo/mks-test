@@ -31,24 +31,29 @@ const CheckoutProductCard: React.FC<CardProps> = ({ imageUrl, title, description
   }
 
   return (
-    <CardContainer>
+    <CardContainer
+      data-testid='cart-product'
+    >
       <CloseCardButton
+        data-testid='remove-product'
         onClick={() => removeCartItemShop(id)}
       >
         x
       </CloseCardButton>
       <ImgContainer>
-        <CardImage src={imageUrl} />
+        <CardImage src={imageUrl} data-testid='product-image' />
       </ImgContainer>
       <CardTitle>{title}</CardTitle>
       <QuantityContainer>
         <QuantityTitle>Qtd:</QuantityTitle>
         <QuantityButtonsContainer>
           <QuantityButton
+            data-testid='decrease-quantity'
             onClick={() => removeItemQuantity(id)}
           >-</QuantityButton>
-          <Quantity>{quantity}</Quantity>
+          <Quantity data-testid='quantity'>{quantity}</Quantity>
           <QuantityButton
+            data-testid='increase-quantity'
             onClick={() => addItemQuantity(id)}
           >+</QuantityButton>
         </QuantityButtonsContainer>

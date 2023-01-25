@@ -6,7 +6,7 @@ export const ProductGrid = styled.div`
   grid-template-rows: repeat(2, 1fr);
   width: 80%;
   margin: 0 auto;
-  margin-top: 116px;
+  margin-top: 217px;
 
   @media (max-width: 450px) {
     display: flex;

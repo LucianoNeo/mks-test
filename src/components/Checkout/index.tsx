@@ -1,10 +1,9 @@
-import CheckoutProductCard from "../CheckoutProductCard";
-import { CheckoutContainer, CheckoutButton, CheckoutTitle, CloseButton, TotalContainer, CardsContainer } from "./style";
-import { CartState } from '../../store/cartSlice';
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { RootState } from "src/store";
-import { toogleCheckout } from "src/store/checkoutSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { toogleCheckout } from "../../store/checkoutSlice";
+import CheckoutProductCard from "../CheckoutProductCard";
+import { CardsContainer, CheckoutButton, CheckoutContainer, CheckoutTitle, CloseButton, TotalContainer } from "./style";
 
 
 const Checkout = () => {
@@ -23,9 +22,10 @@ const Checkout = () => {
     }, [cart])
 
     return (
-        <CheckoutContainer style={visible ? { display: 'flex' } : { display: 'none' }}>
+        <CheckoutContainer data-testid="checkout" style={visible ? { display: 'flex' } : { display: 'none' }}>
             <CheckoutTitle>Carrinho<br />de compras</CheckoutTitle>
             <CloseButton
+                data-testid="closeCheckoutButton"
                 onClick={ToogleModal}
             >X</CloseButton>
             <CardsContainer>

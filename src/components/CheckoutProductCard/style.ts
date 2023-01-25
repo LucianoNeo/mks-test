@@ -40,7 +40,7 @@ export const CardTitle = styled.h3`
 font-weight: 400;
 font-size: 13px;
 line-height: 17px;
-width: 113px;
+width: 103px;
 
 @media (max-width: 450px) {
   font-size: 16px;

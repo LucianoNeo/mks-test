@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const CheckoutContainer = styled.section`
+export const CheckoutContainer = styled.div`
 position: absolute;
 right: 0px;
 top: 0px;
