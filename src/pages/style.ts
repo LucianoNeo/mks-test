@@ -14,7 +14,7 @@ export const ProductGrid = styled.div`
     width: 100vw;
     align-items: center;
     justify-content: center;
-    margin-top: 18px;
+    margin-top: 80px;
   }
 `;
 

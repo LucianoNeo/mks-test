@@ -11,5 +11,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-top: 140px;
-
+@media (max-width: 450px) {
+    margin-top: 0px;
+  }
 `

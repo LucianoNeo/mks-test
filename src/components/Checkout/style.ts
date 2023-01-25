@@ -8,7 +8,7 @@ width: 33vw;
 height: 100vh;
 background: #0F52BA;
 box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
-z-index: 55;
+z-index: 99;
 line-height: 15px;
 color: #FFFFFF;
 padding: 36px 47px;
@@ -21,7 +21,7 @@ padding-bottom: 124px;
 
 @media (max-width: 450px) {
     width: 90vw;
-    height: 100vh;
+    height: 94vh;
   }
 `
 

@@ -10,7 +10,7 @@ import { IProduct } from 'src/types';
 
 
 interface CardProps {
-  id: string;
+  id: number;
   imageUrl: string;
   title: string;
   brand: string;

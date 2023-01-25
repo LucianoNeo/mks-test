@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
+position: fixed;
   width: 100vw;
   height: 101px;
   background-color: #0F52BA;
@@ -8,8 +9,11 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 28px 65px;
+  z-index: 55;
+  top: 0;
+  left: 0;
 
-  @media (max-width: 450px) {
+  @media (max-width: 450px) {  
     height: 48px;
     padding: 28px 20px;
   }

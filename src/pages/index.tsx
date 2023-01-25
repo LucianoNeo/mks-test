@@ -1,20 +1,19 @@
 import Head from 'next/head'
-import Header from 'src/components/Header'
-import Card from 'src/components/ProductCard'
-import { ProductGrid } from './style'
+import { useEffect, useState } from 'react'
+import 'react-loading-skeleton/dist/skeleton.css'
 import Checkout from 'src/components/Checkout'
 import Footer from 'src/components/Footer'
-import { useEffect, useState } from 'react'
-import { api } from 'src/services/api'
-import 'react-loading-skeleton/dist/skeleton.css'
+import Header from 'src/components/Header'
+import Card from 'src/components/ProductCard'
 import CardSkeleton from 'src/components/ProductCardSkeleton'
+import { api } from 'src/services/api'
 import { IProduct } from '../types'
-import { Provider } from 'react-redux';
-import store from '../store';
+import { ProductGrid } from './style'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
   const [products, setProducts] = useState<IProduct[] | null>(null)
+  const [checkoutVisible, setCheckoutVisible] = useState(false)
 
   async function getProducts() {
     try {
@@ -44,42 +43,41 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Provider store={store}>
-        <main >
-          <Header />
-          <Checkout />
-          <ProductGrid>
-            {isLoading ?
-              <>
-                <CardSkeleton />
-                <CardSkeleton />
-                <CardSkeleton />
-                <CardSkeleton />
-                <CardSkeleton />
-                <CardSkeleton />
-                <CardSkeleton />
-                <CardSkeleton />
-              </>
-              :
-              products!.map((product) => (
-                <Card
-                  key={product.id}
-                  id={product.id}
-                  imageUrl={product.photo}
-                  title={product.name}
-                  text={product.description}
-                  price={product.price}
-                  quantity={1}
-                  brand={product.brand}
-                />
-              ))
-            }
+
+      <main >
+        <Checkout />
+        <Header />
+        <ProductGrid>
+          {isLoading ?
+            <>
+              <CardSkeleton />
+              <CardSkeleton />
+              <CardSkeleton />
+              <CardSkeleton />
+              <CardSkeleton />
+              <CardSkeleton />
+              <CardSkeleton />
+              <CardSkeleton />
+            </>
+            :
+            products!.map((product) => (
+              <Card
+                key={product.id}
+                id={product.id}
+                imageUrl={product.photo}
+                title={product.name}
+                text={product.description}
+                price={product.price}
+                quantity={1}
+                brand={product.brand}
+              />
+            ))
+          }
 
 
-          </ProductGrid>
-          <Footer />
-        </main>
-      </Provider>
+        </ProductGrid>
+        <Footer />
+      </main>
     </>
   )
 }
