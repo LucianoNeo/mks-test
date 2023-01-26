@@ -19,7 +19,15 @@ Este projeto foi desenvolvido para cumprir o desafio técnico proposto pela empr
 
 # Descrição
 
-O projeto solicitava a construção de uma SPA de um site de E-COMMERCE com os seguintes requisitos:
+O projeto solicitava a construção de uma SPA de um site de E-COMMERCE baseada nas seguintes UI/UX :
+
+- https://www.figma.com/file/Z4z8osDbK1ET7cjNzFRMrK/MKS-Front-end-challenge?node-id=0%3A1
+
+Deveria consumir a seguinte API:
+
+- https://mks-challenge-api-frontend.herokuapp.com/api-docs/
+
+e cumprir os seguintes requisitos:
 
 # Funcionalidades Previstas
 
@@ -36,5 +44,5 @@ O projeto solicitava a construção de uma SPA de um site de E-COMMERCE com os s
 
 A aplicação foi hospedada na VERCEL e pode ser visualizada neste link:
 
-[DEPLOY](https://mks-test.vercel.app/)
+[DEPLOY](https://mks-test-rose.vercel.app/)
 
