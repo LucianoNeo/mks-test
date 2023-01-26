@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import cartReducer from './cartSlice';
 import checkoutReducer from './checkoutSlice';
 
-const store = configureStore({
+const mockStore = configureStore({
   reducer: {
     cart: cartReducer,
     checkout: checkoutReducer
@@ -10,6 +10,6 @@ const store = configureStore({
 });
 
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
-export default store;
+export type RootState = ReturnType<typeof mockStore.getState>
+export type AppDispatch = typeof mockStore.dispatch
+export default mockStore;

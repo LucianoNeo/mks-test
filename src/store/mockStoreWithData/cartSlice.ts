@@ -15,7 +15,18 @@ export interface CartState {
 }
 
 const initialState: CartState = {
-    items: [],
+    items: [
+        {
+            id: 1,
+            title: 'item1',
+            price: 0,
+            quantity: 1,
+            description: 'product',
+            imageUrl: './placeholder.png',
+            brand: 'Apple'
+        },
+    ],
+
 };
 
 export const cartSlice = createSlice({

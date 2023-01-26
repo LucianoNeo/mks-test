@@ -2,7 +2,7 @@ import { render } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import Home from '../../pages'
 import Footer from '.'
-import store from '../../store'
+import mockStoreEmpty from '../../store/mockStoreEmpty'
 
 describe('Footer Component', () => {
 
@@ -10,7 +10,7 @@ describe('Footer Component', () => {
     it('should render correctly', () => {
         const { getByText } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStoreEmpty}>
                     <Footer />
                 </Provider>
             )
@@ -20,7 +20,7 @@ describe('Footer Component', () => {
     it('should appear in home page', () => {
         const { getByText } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStoreEmpty}>
                     <Home />
                 </Provider>
             )

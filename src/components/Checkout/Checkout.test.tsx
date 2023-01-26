@@ -2,8 +2,8 @@ import { render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Provider } from 'react-redux'
 import Checkout from '.'
-import store from '../../store'
-
+import mockStore from '../../store/mockStoreWithData'
+import mockStoreEmpty from '../../store/mockStoreEmpty'
 
 describe('Checkout Component', () => {
 
@@ -11,7 +11,7 @@ describe('Checkout Component', () => {
     it('should render correctly', () => {
         const { getByText } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStoreEmpty}>
                     <Checkout />
                 </Provider>
             )
@@ -22,7 +22,7 @@ describe('Checkout Component', () => {
     it('should Cart Modal not visible at start', () => {
         const { getByTestId } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStoreEmpty}>
                     <Checkout />
                 </Provider>
             )
@@ -31,9 +31,9 @@ describe('Checkout Component', () => {
     })
 
     it('should total value 0 at start', async () => {
-        const { getByTestId, getByText, debug } =
+        const { getByText } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStoreEmpty}>
                     <Checkout />
                 </Provider>
             )
@@ -46,7 +46,7 @@ describe('Checkout Component', () => {
     it('should close Cart Modal on close button click', async () => {
         const { getByTestId } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStoreEmpty}>
                     <Checkout />
                 </Provider>
             )

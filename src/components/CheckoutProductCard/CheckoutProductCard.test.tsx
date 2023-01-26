@@ -5,7 +5,8 @@ import CheckoutProductCard from '.'
 import store from '../../store'
 import Checkout from '../Checkout'
 import Header from '../Header'
-
+import mockStore from '../../store/mockStoreWithData'
+import mockStoreEmpty from '../../store/mockStoreEmpty'
 
 describe('Checkout Product Card Component', () => {
 
@@ -13,7 +14,7 @@ describe('Checkout Product Card Component', () => {
     it('should render correctly', () => {
         const { getByText, getAllByText } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStore}>
                     <CheckoutProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Iphone' quantity={1} description='' index={0} brand='Apple' />
                 </Provider>
             )
@@ -23,9 +24,9 @@ describe('Checkout Product Card Component', () => {
     })
 
     it('should have an image', () => {
-        const { getByText, getAllByText, getByTestId } =
+        const { getByTestId } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStore}>
                     <CheckoutProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Iphone' quantity={1} description='' index={0} brand='Apple' />
                 </Provider>
             )
@@ -34,9 +35,9 @@ describe('Checkout Product Card Component', () => {
     })
 
     it('should increase product quantity', () => {
-        const { getByText, getAllByText, getByTestId, debug } =
+        const { getByTestId } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStore}>
                     <Header />
                     <Checkout />
                 </Provider>
@@ -44,15 +45,15 @@ describe('Checkout Product Card Component', () => {
         const increaseButton = getByTestId('increase-quantity')
         const quantity = getByTestId('quantity')
         fireEvent.click(getByTestId('showCartButton'))
-        expect(quantity).toHaveTextContent('2')
+        expect(quantity).toHaveTextContent('1')
         fireEvent.click(increaseButton)
-        expect(quantity).toHaveTextContent('3')
+        expect(quantity).toHaveTextContent('2')
     })
 
     it('should decrease product quantity', () => {
-        const { getByText, getAllByText, getByTestId, debug } =
+        const { getByTestId } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStore}>
                     <Header />
                     <Checkout />
                 </Provider>
@@ -60,16 +61,16 @@ describe('Checkout Product Card Component', () => {
         const decreaseButton = getByTestId('decrease-quantity')
         const quantity = getByTestId('quantity')
         fireEvent.click(getByTestId('showCartButton'))
-        expect(quantity).toHaveTextContent('3')
-        fireEvent.click(decreaseButton)
         expect(quantity).toHaveTextContent('2')
+        fireEvent.click(decreaseButton)
+        expect(quantity).toHaveTextContent('1')
     })
 
 
     it('should remove product on close button click', async () => {
         const { getByTestId } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStore}>
                     <Header />
                     <Checkout />
                 </Provider>

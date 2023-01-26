@@ -16,6 +16,7 @@ export interface CartState {
 
 const initialState: CartState = {
     items: [],
+
 };
 
 export const cartSlice = createSlice({

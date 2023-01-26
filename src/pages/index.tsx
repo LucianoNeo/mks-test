@@ -50,7 +50,7 @@ export default function Home() {
       <main >
         <Checkout />
         <Header />
-        <ProductGrid>
+        <ProductGrid data-testid='productsContainer'>
           {isLoading ?
             <>
               <CardSkeleton />

@@ -28,7 +28,7 @@ const Header = () => {
     }
 
     return (
-        <StyledHeader>
+        <StyledHeader data-testid='header'>
             <TitleContainer>
                 <Title>MKS</Title>
                 <Subtitle>Sistemas</Subtitle>

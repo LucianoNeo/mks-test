@@ -2,8 +2,8 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import ProductCard from '.'
 import Home from '../../pages'
-import store from '../../store'
-
+import mockStoreEmpty from '../../store/mockStoreEmpty'
+import mockStore from '../../store/mockStoreWithData'
 
 
 describe('ProductCard Component', () => {
@@ -11,7 +11,7 @@ describe('ProductCard Component', () => {
     it('should render correctly', () => {
         const { getByText, getByTestId } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStoreEmpty}>
                     <ProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Iphone' quantity={1} text='descricao' brand='Apple' />
                 </Provider>
             )
@@ -26,23 +26,23 @@ describe('ProductCard Component', () => {
     it('should add a item to the cart', async () => {
         const { } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStore}>
                     <Home />
                 </Provider>
             )
 
         const buyButton = await screen.findAllByText('COMPRAR')
         const cartQuantity = screen.getByTestId('itemsQuantity')
-        expect(cartQuantity).toHaveTextContent('2')
+        expect(cartQuantity).toHaveTextContent('1')
         fireEvent.click(buyButton[0])
-        expect(cartQuantity).toHaveTextContent('3')
+        expect(cartQuantity).toHaveTextContent('2')
 
     })
 
     it('should render a product card into the cart modal', async () => {
         const { getByTestId } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStoreEmpty}>
                     <Home />
                 </Provider>
             )
@@ -53,8 +53,9 @@ describe('ProductCard Component', () => {
         fireEvent.click(cartButton)
         const checkoutModal = screen.queryByTestId("checkout");
         expect(checkoutModal).toBeVisible()
-        const card = screen.queryAllByTestId("cart-product")
-        expect(card[0]).toBeInTheDocument()
+
+        const card = screen.queryByTestId("cart-product")
+        expect(card).toBeInTheDocument()
 
     })
 

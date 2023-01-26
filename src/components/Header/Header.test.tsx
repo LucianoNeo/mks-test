@@ -1,15 +1,14 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import Header from '.'
-import store from '../../store'
+import mockStoreEmpty from '../../store/mockStoreEmpty'
 import Checkout from '../Checkout'
-
 
 describe('Header Component', () => {
     it('should render correctly', () => {
         const { getByText } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStoreEmpty}>
                     <Header />
                 </Provider>
             )
@@ -20,7 +19,7 @@ describe('Header Component', () => {
     it('should show Cart Modal on button click', () => {
         const { getByTestId } =
             render(
-                <Provider store={store}>
+                <Provider store={mockStoreEmpty}>
                     <Checkout />
                     <Header />
                 </Provider>
