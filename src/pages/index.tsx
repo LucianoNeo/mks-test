@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { ToastContainer } from 'react-toastify'
+import { ProductGrid } from 'src/styles/globals'
 import Checkout from '../components/Checkout'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -9,7 +10,6 @@ import Card from '../components/ProductCard'
 import CardSkeleton from '../components/ProductCardSkeleton'
 import { api } from '../services/api'
 import { IProduct } from '../types'
-import { ProductGrid } from './style'
 
 
 
