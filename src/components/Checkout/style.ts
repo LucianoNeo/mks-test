@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const CheckoutContainer = styled.div`
-position: absolute;
+position: fixed;
 right: 0px;
 top: 0px;
 width: 33vw;

@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { toogleCheckout } from "../../store/checkoutSlice";
+import { checkout } from '../../store/cartSlice'
 import CheckoutProductCard from "../CheckoutProductCard";
 import { CardsContainer, CheckoutButton, CheckoutContainer, CheckoutTitle, CloseButton, TotalContainer } from "./style";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
     const [totalCart, setTotalCart] = useState(0)
@@ -12,9 +14,25 @@ const Checkout = () => {
     const visible = useSelector((state: RootState) => state.checkout.visible)
     const dispatch = useDispatch();
 
+    function toastify() {
+        toast.success(`Obrigado por comprar conosco!`, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
     const ToogleModal = () => {
         dispatch(toogleCheckout());
     }
+
+    const HandleCheckout = () => {
+        dispatch(checkout());
+    }
+
     useEffect(() => {
         let totalPrice = 0
         cart.map((item, index) => totalPrice += Number(item.price) * item.quantity)
@@ -29,6 +47,9 @@ const Checkout = () => {
                 onClick={ToogleModal}
             >X</CloseButton>
             <CardsContainer>
+                {cart.length == 0 &&
+                    <span>O Carrinho está vazio...</span>
+                }
                 {cart.map((item, index) => (
                     <CheckoutProductCard
                         index={index}
@@ -48,7 +69,11 @@ const Checkout = () => {
                 <span>R${totalCart}</span>
             </TotalContainer>
             <CheckoutButton
-                onClick={ToogleModal}
+                onClick={() => {
+                    HandleCheckout()
+                    ToogleModal()
+                    toastify()
+                }}
             >Finalizar Compra</CheckoutButton>
         </CheckoutContainer>
     )

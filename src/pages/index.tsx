@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { ToastContainer } from 'react-toastify'
 import Checkout from '../components/Checkout'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -45,7 +46,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <ToastContainer />
       <main >
         <Checkout />
         <Header />

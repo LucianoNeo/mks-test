@@ -10,6 +10,10 @@ position: relative;
   overflow: hidden;
   padding: 14px;
   margin-bottom: 32px;
+  :hover{
+ transform: scale(1.2);
+  transition: 500ms all;
+}
 
   @media (max-width: 450px) {
    width: 65%;
@@ -83,4 +87,8 @@ color: #fff;
 width: 100%;
 height: 32px;
 cursor: pointer;
+:hover{
+  background-color: #0F52FF;
+  transition: 500ms all;
+}
 `;
