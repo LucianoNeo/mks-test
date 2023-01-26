@@ -14,7 +14,15 @@ export interface CartState {
 }
 
 const initialState: CartState = {
-    items: [{ id: 1, title: 'item1', price: 0, quantity: 2, description: 'product', imageUrl: './placeholder.png' }],
+    items: [
+        {
+            id: 1,
+            title: 'item1',
+            price: 0,
+            quantity: 2,
+            description: 'product',
+            imageUrl: './placeholder.png'
+        }],
 };
 
 export const cartSlice = createSlice({
@@ -25,7 +33,7 @@ export const cartSlice = createSlice({
             const item = state.items.find((i) => i.id === action.payload.id);
             if (item) {
                 item.quantity++;
-                console.log(item)
+
                 return
             }
             state.items.push(action.payload);
@@ -34,7 +42,7 @@ export const cartSlice = createSlice({
             const item = state.items.find((i) => i.id === action.payload);
             if (item) {
                 item.quantity++;
-                console.log(item)
+
             }
         },
         removeQuantity: (state, action: PayloadAction<number>) => {

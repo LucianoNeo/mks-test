@@ -1,19 +1,13 @@
-import { fireEvent, getAllByText, render, screen } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Provider } from 'react-redux'
-import Home from '../../pages'
 import CheckoutProductCard from '.'
 import store from '../../store'
-import configureMockStore from 'redux-mock-store'
 import Checkout from '../Checkout'
 import Header from '../Header'
 
-const fakeStore = configureMockStore()({
-    cart: { items: [{ id: '1', title: 'item1', price: 50, quantity: 1 }] },
-    checkout: { visible: false }
-})
 
-describe('Checkout Component', () => {
+describe('Checkout Product Card Component', () => {
 
 
     it('should render correctly', () => {

@@ -70,6 +70,12 @@ export default {
   // moduleDirectories: [
   //   "node_modules"
   // ],
+  moduleNameMapper: {
+    '^axios$': require.resolve('axios'),
+    "\\.css$": "<rootDir>/__mocks__/styleMock.js"
+  },
+
+
 
   // An array of file extensions your modules use
   // moduleFileExtensions: [
@@ -155,9 +161,9 @@ export default {
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
-  // ],
+  testPathIgnorePatterns: [
+    "node_modules", ".next"
+  ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
@@ -175,32 +181,33 @@ export default {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  transform: {
-    "^.+\\.(t|j)sx?$": [
-      "@swc/jest",
-      {
-        jsc: {
-          parser: {
-            syntax: "typescript",
-            tsx: true,
-            decorators: true,
-          },
-          keepClassNames: true,
-          transform: {
-            legacyDecorator: true,
-            decoratorMetadata: true,
-            react: {
-              runtime: "automatic",
-            },
-          },
-        },
-        module: {
-          type: "es6",
-          noInterop: false,
-        },
-      },
-    ],
-  },
+
+  // transform: {
+  //   "^.+\\.(t|j)sx?$": [
+  //     "@swc/jest",
+  //     {
+  //       jsc: {
+  //         parser: {
+  //           syntax: "typescript",
+  //           tsx: true,
+  //           decorators: true,
+  //         },
+  //         keepClassNames: true,
+  //         transform: {
+  //           legacyDecorator: true,
+  //           decoratorMetadata: true,
+  //           react: {
+  //             runtime: "automatic",
+  //           },
+  //         },
+  //       },
+  //       module: {
+  //         type: "es6",
+  //         noInterop: false,
+  //       },
+  //     },
+  //   ],
+  // },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

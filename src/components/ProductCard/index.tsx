@@ -32,7 +32,9 @@ const Card: React.FC<CardProps> = ({ brand, imageUrl, title, text, price, id, qu
   return (
     <CardContainer>
       <ImgContainer>
-        <CardImage src={imageUrl} />
+        <CardImage src={imageUrl}
+          data-testid='productCardImage'
+        />
       </ImgContainer>
       <TitlePriceContainer>
         <CardTitle>{brand} {title}</CardTitle>
