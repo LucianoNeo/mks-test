@@ -1,9 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import ProductCard from '.'
-import Home from '../../pages'
-import mockStoreEmpty from '../../store/mockStoreEmpty'
-import mockStore from '../../store/mockStoreWithData'
+import ProductCard from '../components/ProductCard'
+import Home from '../pages'
+import mockStoreEmpty from '../store/mockStoreEmpty'
+import mockStore from '../store/mockStoreWithData'
 
 
 describe('ProductCard Component', () => {

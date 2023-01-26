@@ -1,16 +1,15 @@
-import { fireEvent, getByTestId, queryAllByTestId, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import Header from '.'
-import mockStore from '../store/mockStoreWithData'
-import mockStoreEmpty from '../store/mockStoreEmpty/'
-import Home from '.'
+import Home from '../pages'
+
+import mockStoreEmpty from '../store/mockStoreEmpty'
 
 
 
 describe('Home Page', () => {
 
     it('should render skeleton while loading', () => {
-        const { getByText, getByTestId, getAllByTestId, findAllByTestId, findByTestId, queryAllByTestId } =
+        const { getByTestId } =
             render(
                 <Provider store={mockStoreEmpty}>
                     <Home />
@@ -23,7 +22,7 @@ describe('Home Page', () => {
     })
 
     it('should render correctly', async () => {
-        const { getByText, getByTestId, getAllByTestId, findAllByTestId, findByTestId, queryAllByTestId } =
+        const { getByTestId, findAllByTestId } =
             render(
                 <Provider store={mockStoreEmpty}>
                     <Home />

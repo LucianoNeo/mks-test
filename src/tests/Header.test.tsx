@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import Header from '.'
-import mockStoreEmpty from '../../store/mockStoreEmpty'
-import Checkout from '../Checkout'
+import Header from '../components/Header'
+import mockStoreEmpty from '../store/mockStoreEmpty'
+import Checkout from '../components/Checkout'
 
 describe('Header Component', () => {
     it('should render correctly', () => {

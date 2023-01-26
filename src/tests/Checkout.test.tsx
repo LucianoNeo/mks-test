@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Provider } from 'react-redux'
-import Checkout from '.'
-import mockStore from '../../store/mockStoreWithData'
-import mockStoreEmpty from '../../store/mockStoreEmpty'
+import Checkout from '../components/Checkout'
+import mockStore from '../store/mockStoreWithData'
+import mockStoreEmpty from '../store/mockStoreEmpty'
 
 describe('Checkout Component', () => {
 

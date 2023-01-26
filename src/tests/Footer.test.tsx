@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import Home from '../../pages'
-import Footer from '.'
-import mockStoreEmpty from '../../store/mockStoreEmpty'
+import Home from '../pages'
+import Footer from '../components/Footer'
+import mockStoreEmpty from '../store/mockStoreEmpty'
 
 describe('Footer Component', () => {
 

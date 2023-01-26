@@ -1,12 +1,12 @@
 import { fireEvent, render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Provider } from 'react-redux'
-import CheckoutProductCard from '.'
-import store from '../../store'
-import Checkout from '../Checkout'
-import Header from '../Header'
-import mockStore from '../../store/mockStoreWithData'
-import mockStoreEmpty from '../../store/mockStoreEmpty'
+import CheckoutProductCard from '../components/CheckoutProductCard'
+import store from '../store'
+import Checkout from '../components/Checkout'
+import Header from '../components/Header'
+import mockStore from '../store/mockStoreWithData'
+import mockStoreEmpty from '../store/mockStoreEmpty'
 
 describe('Checkout Product Card Component', () => {
 
