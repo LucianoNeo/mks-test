@@ -39,6 +39,7 @@ const Checkout = () => {
                         description={item.description}
                         price={item.price}
                         quantity={item.quantity}
+                        brand={item.brand}
                     />
                 ))}
             </CardsContainer>

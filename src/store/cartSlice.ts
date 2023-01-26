@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface CartItem {
+    brand: string;
     id: number;
     title: string;
     quantity: number;
@@ -21,7 +22,8 @@ const initialState: CartState = {
             price: 0,
             quantity: 2,
             description: 'product',
-            imageUrl: './placeholder.png'
+            imageUrl: './placeholder.png',
+            brand: 'Apple'
         }],
 };
 

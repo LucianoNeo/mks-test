@@ -14,7 +14,7 @@ describe('Checkout Product Card Component', () => {
         const { getByText, getAllByText } =
             render(
                 <Provider store={store}>
-                    <CheckoutProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Apple Iphone' quantity={1} description='' index={0} />
+                    <CheckoutProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Iphone' quantity={1} description='' index={0} brand='Apple' />
                 </Provider>
             )
         expect(getByText('Apple Iphone')).toBeTruthy()
@@ -26,7 +26,7 @@ describe('Checkout Product Card Component', () => {
         const { getByText, getAllByText, getByTestId } =
             render(
                 <Provider store={store}>
-                    <CheckoutProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Apple Iphone' quantity={1} description='' index={0} />
+                    <CheckoutProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Iphone' quantity={1} description='' index={0} brand='Apple' />
                 </Provider>
             )
         const image = getByTestId('product-image')

@@ -1,6 +1,5 @@
-import Image from 'next/image';
-import { CardButton, CardContainer, CardImage, ImgContainer, Price, TitlePriceContainer } from './style'
-import Skeleton from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton';
+import { CardContainer, ImgContainer, TitlePriceContainer } from './style';
 
 
 const CardSkeleton = () => (

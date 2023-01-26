@@ -11,10 +11,11 @@ interface CardProps {
   price: number;
   index: number;
   quantity: number;
+  brand: string
 }
 
 
-const CheckoutProductCard: React.FC<CardProps> = ({ imageUrl, title, description, id, price, index, quantity }) => {
+const CheckoutProductCard: React.FC<CardProps> = ({ imageUrl, title, description, id, price, index, quantity, brand }) => {
 
   const dispatch = useDispatch();
 
@@ -43,7 +44,7 @@ const CheckoutProductCard: React.FC<CardProps> = ({ imageUrl, title, description
       <ImgContainer>
         <CardImage src={imageUrl} data-testid='product-image' />
       </ImgContainer>
-      <CardTitle>{title}</CardTitle>
+      <CardTitle>{brand} {title}</CardTitle>
       <QuantityContainer>
         <QuantityTitle>Qtd:</QuantityTitle>
         <QuantityButtonsContainer>

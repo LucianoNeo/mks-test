@@ -37,7 +37,7 @@ const Header = () => {
                 onClick={ToogleModal}
             >
                 <Image src='./cart.svg' alt='carrinho' width={18} height={18} />
-                <span>{totalItens}</span>
+                <span data-testid='itemsQuantity'>{totalItens}</span>
             </CartButton>
         </StyledHeader>
 
