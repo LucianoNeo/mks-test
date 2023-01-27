@@ -12,7 +12,7 @@ describe('ProductCard Component', () => {
         const { getByText, getByTestId } =
             render(
                 <Provider store={mockStoreEmpty}>
-                    <ProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Iphone' quantity={1} text='descricao' brand='Apple' />
+                    <ProductCard id={1} photo='./apple-watch.png' price={399} name='Iphone' quantity={1} description='descricao' brand='Apple' />
                 </Provider>
             )
         const image = getByTestId('productCardImage')
@@ -27,7 +27,15 @@ describe('ProductCard Component', () => {
         const { } =
             render(
                 <Provider store={mockStore}>
-                    <Home />
+                    <Home productsSSR={[{
+                        id: 1,
+                        name: 'item1',
+                        price: 0,
+                        quantity: 1,
+                        description: 'product',
+                        photo: './placeholder.png',
+                        brand: 'Apple'
+                    },]} />
                 </Provider>
             )
 
@@ -43,7 +51,15 @@ describe('ProductCard Component', () => {
         const { getByTestId } =
             render(
                 <Provider store={mockStoreEmpty}>
-                    <Home />
+                    <Home productsSSR={[{
+                        id: 1,
+                        name: 'item1',
+                        price: 0,
+                        quantity: 1,
+                        description: 'product',
+                        photo: './placeholder.png',
+                        brand: 'Apple'
+                    },]} />
                 </Provider>
             )
 

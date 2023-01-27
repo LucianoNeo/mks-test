@@ -1,34 +1,48 @@
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { ToastContainer } from 'react-toastify'
-import { ProductGrid } from 'src/styles/globals'
+import { ProductGrid } from '../styles/globals'
 import Checkout from '../components/Checkout'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import Card from '../components/ProductCard'
+import Card, { CardProps } from '../components/ProductCard'
 import CardSkeleton from '../components/ProductCardSkeleton'
 import { api } from '../services/api'
 import { IProduct } from '../types'
 
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await api('')
+  const data = await response.data
+  const productsSSR = data.products
+
+  return {
+    props: { productsSSR },
+    revalidate: 20
+  }
+
+}
+
+interface IProps {
+  productsSSR: CardProps[];
+}
 
 
-export default function Home() {
+export default function Home({ productsSSR }: IProps) {
   const [isLoading, setIsLoading] = useState(true)
-  const [products, setProducts] = useState<IProduct[] | null>(null)
+  const products = productsSSR
 
 
   async function getProducts() {
     try {
       setIsLoading(true)
-      const response = await api.get('')
-      const data = await response.data.products
-      if (!data) throw 'Problema na requisição'
-      setProducts(data)
+      setTimeout(() => {
+        console.log('Simulating loading')
+        setIsLoading(false)
+      }, 1000)
     } catch (error) {
       console.log(error);
-    } finally {
-      setIsLoading(false)
     }
   }
 
@@ -67,9 +81,9 @@ export default function Home() {
               <Card
                 key={product.id}
                 id={product.id}
-                imageUrl={product.photo}
-                title={product.name}
-                text={product.description}
+                photo={product.photo}
+                name={product.name}
+                description={product.description}
                 price={product.price}
                 quantity={1}
                 brand={product.brand}
