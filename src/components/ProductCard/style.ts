@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-position: relative;
+  position: relative;
   width: 217px;
   height: 285px;
   background-color: #fff;
@@ -10,9 +10,15 @@ position: relative;
   overflow: hidden;
   padding: 14px;
   margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 40px;
   :hover{
  transform: scale(1.2);
   transition: 500ms all;
+  
 }
 
   @media (max-width: 450px) {
@@ -45,7 +51,7 @@ margin-top: 10px;
 export const CardTitle = styled.h3`
   font-weight: 400;
 font-size: 16px;
-max-width: 120px;
+max-width: 124px;
 min-height: 20px;
 `;
 
