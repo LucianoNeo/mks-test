@@ -1,12 +1,10 @@
 import { fireEvent, render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Provider } from 'react-redux'
-import CheckoutProductCard from '../components/CheckoutProductCard'
-import store from '../store'
 import Checkout from '../components/Checkout'
+import CheckoutProductCard from '../components/CheckoutProductCard'
 import Header from '../components/Header'
 import mockStore from '../store/mockStoreWithData'
-import mockStoreEmpty from '../store/mockStoreEmpty'
 
 describe('Checkout Product Card Component', () => {
 
@@ -15,7 +13,7 @@ describe('Checkout Product Card Component', () => {
         const { getByText, getAllByText } =
             render(
                 <Provider store={mockStore}>
-                    <CheckoutProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Iphone' quantity={1} description='' index={0} brand='Apple' />
+                    <CheckoutProductCard id={1} photo='./apple-watch.png' price={399} name='Iphone' quantity={1} description='' brand='Apple' />
                 </Provider>
             )
         expect(getByText('Apple Iphone')).toBeTruthy()
@@ -27,7 +25,7 @@ describe('Checkout Product Card Component', () => {
         const { getByTestId } =
             render(
                 <Provider store={mockStore}>
-                    <CheckoutProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Iphone' quantity={1} description='' index={0} brand='Apple' />
+                    <CheckoutProductCard id={1} photo='./apple-watch.png' price={399} name='Iphone' quantity={1} description='' brand='Apple' />
                 </Provider>
             )
         const image = getByTestId('product-image')

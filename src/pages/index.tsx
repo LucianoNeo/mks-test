@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { ToastContainer } from 'react-toastify'
-import { ProductGrid } from 'src/styles/globals'
+import { ProductGrid } from '../styles/globals'
 import Checkout from '../components/Checkout'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -67,16 +67,15 @@ export default function Home() {
               <Card
                 key={product.id}
                 id={product.id}
-                imageUrl={product.photo}
-                title={product.name}
-                text={product.description}
+                photo={product.photo}
+                name={product.name}
+                description={product.description}
                 price={product.price}
                 quantity={1}
                 brand={product.brand}
               />
             ))
           }
-
 
         </ProductGrid>
         <Footer />

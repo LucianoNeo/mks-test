@@ -1,28 +1,17 @@
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { CardProps } from '../../types';
 import { addQuantity, removeProduct, removeQuantity } from '../../store/cartSlice';
 import { CardContainer, CardImage, CardTitle, CloseCardButton, ImgContainer, Price, PriceText, PriceTextMobile, Quantity, QuantityButton, QuantityButtonsContainer, QuantityContainer, QuantityTitle } from './style';
 
-interface CardProps {
-  imageUrl: string;
-  title: string;
-  id: number;
-  description: string;
-  price: number;
-  index: number;
-  quantity: number;
-  brand: string
-}
 
-
-
-const CheckoutProductCard: React.FC<CardProps> = ({ imageUrl, title, description, id, price, index, quantity, brand }) => {
+const CheckoutProductCard: React.FC<CardProps> = ({ photo, name, id, price, quantity, brand }) => {
 
   const dispatch = useDispatch();
 
   const Msg = () => (
-    <div>Produto: <br></br> <strong>{brand} {title}</strong> <br></br>removido do carrinho!</div>
+    <div>Produto: <br></br> <strong>{brand} {name}</strong> <br></br>removido do carrinho!</div>
   )
 
   function toastify() {
@@ -60,9 +49,9 @@ const CheckoutProductCard: React.FC<CardProps> = ({ imageUrl, title, description
         x
       </CloseCardButton>
       <ImgContainer>
-        <CardImage src={imageUrl} data-testid='product-image' />
+        <CardImage src={photo} data-testid='product-image' />
       </ImgContainer>
-      <CardTitle>{brand} {title}</CardTitle>
+      <CardTitle>{brand} {name}</CardTitle>
       <QuantityContainer>
         <QuantityTitle>Qtd:</QuantityTitle>
         <QuantityButtonsContainer>

@@ -52,10 +52,9 @@ const Checkout = () => {
                 }
                 {cart.map((item, index) => (
                     <CheckoutProductCard
-                        index={index}
                         key={item.id}
-                        imageUrl={item.imageUrl}
-                        title={item.title}
+                        photo={item.photo}
+                        name={item.name}
                         id={item.id}
                         description={item.description}
                         price={item.price}

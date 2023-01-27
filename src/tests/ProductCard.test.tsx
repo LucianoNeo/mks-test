@@ -12,7 +12,7 @@ describe('ProductCard Component', () => {
         const { getByText, getByTestId } =
             render(
                 <Provider store={mockStoreEmpty}>
-                    <ProductCard id={1} imageUrl='./apple-watch.png' price={399} title='Iphone' quantity={1} text='descricao' brand='Apple' />
+                    <ProductCard id={1} photo='./apple-watch.png' price={399} name='Iphone' quantity={1} description='descricao' brand='Apple' />
                 </Provider>
             )
         const image = getByTestId('productCardImage')

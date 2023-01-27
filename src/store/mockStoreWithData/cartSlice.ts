@@ -3,10 +3,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export interface CartItem {
     brand: string;
     id: number;
-    title: string;
+    name: string;
     quantity: number;
     price: number;
-    imageUrl: string;
+    photo: string;
     description: string;
 }
 
@@ -18,11 +18,11 @@ const initialState: CartState = {
     items: [
         {
             id: 1,
-            title: 'item1',
+            name: 'item1',
             price: 0,
             quantity: 1,
             description: 'product',
-            imageUrl: './placeholder.png',
+            photo: './placeholder.png',
             brand: 'Apple'
         },
     ],

@@ -1,26 +1,17 @@
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { CardProps } from 'src/types';
 import { addProduct, CartItem } from '../../store/cartSlice';
 import { CardButton, CardContainer, CardImage, CardText, CardTitle, ImgContainer, Price, PriceText, TitlePriceContainer } from './style';
 
 
-interface CardProps {
-  id: number;
-  imageUrl: string;
-  title: string;
-  brand: string;
-  text: string;
-  price: number;
-  quantity: 1;
-}
 
-
-const Card: React.FC<CardProps> = ({ brand, imageUrl, title, text, price, id, quantity }) => {
+const Card: React.FC<CardProps> = ({ brand, photo, name, description, price, id, quantity }) => {
   const dispatch = useDispatch();
   const Msg = () => (
-    <div>Produto: <br></br> <strong>{brand} {title}</strong> <br></br>adicionado ao carrinho!</div>
+    <div>Produto: <br></br> <strong>{brand} {name}</strong> <br></br>adicionado ao carrinho!</div>
   )
   function toastify() {
     toast.success(<Msg />, {
@@ -39,24 +30,24 @@ const Card: React.FC<CardProps> = ({ brand, imageUrl, title, text, price, id, qu
     toastify()
   }
   const item = {
-    id, imageUrl, title, description: text, price, quantity, brand
+    id, photo, name, description: description, price, quantity, brand
   }
   return (
     <>
       <CardContainer data-testid='productCard'>
 
         <ImgContainer>
-          <CardImage src={imageUrl}
+          <CardImage src={photo}
             data-testid='productCardImage'
           />
         </ImgContainer>
         <TitlePriceContainer>
-          <CardTitle>{brand} {title}</CardTitle>
+          <CardTitle>{brand} {name}</CardTitle>
           <Price>
             <PriceText>R${Number(price).toFixed()}</PriceText>
           </Price>
         </TitlePriceContainer>
-        <CardText>{text}</CardText>
+        <CardText>{description}</CardText>
         <CardButton
           onClick={() => addCartItemShop(item)}
         >
