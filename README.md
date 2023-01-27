@@ -1,3 +1,6 @@
+
+![Screenshot_40](https://user-images.githubusercontent.com/16579699/214915306-387a8f0c-a96e-4476-a6a5-4265a0e7be61.png)
+
 # MKS Sistemas (E-Commerce)
 
 Este projeto foi desenvolvido para cumprir o desafio técnico proposto pela empresa MKS Sistemas.
@@ -44,5 +47,5 @@ e cumprir os seguintes requisitos:
 
 A aplicação foi hospedada na VERCEL e pode ser visualizada neste link:
 
-[DEPLOY](https://mks-test-rose.vercel.app/)
+[DEPLOY](https://mks-test-lucianoneo.vercel.app/)
 
